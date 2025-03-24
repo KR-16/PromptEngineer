@@ -11,8 +11,8 @@ import {
     Tooltip,
     CircularProgress
 } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import ClearIcon from '@mui/icons-material/Clear';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 const ScenarioForm = ({ onSubmit, isLoading }) => {
@@ -108,7 +108,7 @@ const ScenarioForm = ({ onSubmit, isLoading }) => {
                                 color="error"
                                 sx={{ opacity: constraints.length === 1 ? 0.5 : 1 }}
                             >
-                                <DeleteIcon />
+                                <ClearIcon />
                             </IconButton>
                         </ListItem>
                     ))}
@@ -117,7 +117,7 @@ const ScenarioForm = ({ onSubmit, isLoading }) => {
                 <Box sx={{ display: 'flex', gap: 2, justifyContent: 'space-between' }}>
                     <Button 
                         onClick={handleAddConstraint}
-                        startIcon={<AddCircleOutlineIcon />}
+                        startIcon={<AddCircleIcon />}
                         variant="outlined"
                         color="primary"
                     >
