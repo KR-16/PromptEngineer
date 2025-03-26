@@ -19,6 +19,11 @@ const ScenarioForm = ({ onSubmit, isLoading }) => {
     const [scenario, setScenario] = useState('');
     const [constraints, setConstraints] = useState(['']);
 
+    const isFormValid = () => {
+        return scenario.trim() !== '' && 
+               constraints.some(constraint => constraint.trim() !== '');
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         onSubmit({
@@ -126,7 +131,7 @@ const ScenarioForm = ({ onSubmit, isLoading }) => {
                     <Button 
                         type="submit"
                         variant="contained"
-                        disabled={isLoading || !scenario.trim()}
+                        disabled={isLoading || !isFormValid()}
                         sx={{ 
                             minWidth: 150,
                             position: 'relative'
